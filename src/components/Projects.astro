@@ -45,7 +45,7 @@ const projects = [
   {
     title: "Reallo - Planificador de proyectos y tareas",
     description:
-      "Aplicación web fullstack para la gestión de proyectos y tareas, inspirada en Trello. Reallo ofrece una interfaz dinámica y amigable para la gestión de tareas y proyectos. Construida con React, Express, MongoDB y Node.js.",
+      "Aplicación web fullstack para la gestión de proyectos y tareas, inspirada en Trello. Login y registro de usuarios, creación de tableros y listas, asignación de tareas a listas, y funcionalidad drag and drop. Además, Reallo cuenta con tests de integración con Cypress.",
     link: "https://www.google.com",
     github: "https://www.github.com",
     image:
@@ -53,8 +53,9 @@ const projects = [
     tags: [tags.REACT, tags.NODEJS, tags.EXPRESS, tags.MONGODB, tags.SASS],
   },
   {
-    title: "Project 2",
-    description: "This is a project",
+    title: "3D T-shirt Designer & AI Helper",
+    description:
+      "Aplicación web para visualizar diseños de camisetas en 3D. Interfaz dinámica y atractiva, adaptada a cualquier dispositivo, con colores dinámicos y la posibilidad de subir tus propios archivos como logos o texturas. También se pueden generar nuevos logos y texturas empleando el asistende de IA (OpenAI API).",
     link: "https://www.google.com",
     github: "https://www.github.com",
     image:
@@ -66,17 +67,19 @@ const projects = [
 
 {
   projects.map((project) => (
-    <article>
+    <article class="flex flex-col mb-10">
       <h3 class="text-2xl font-semibold text-blue-400 mb-2">{project.title}</h3>
-      <img
-        class="rounded shadow-2xl shadow-cyan-500/40"
-        src={project.image}
-        alt={`Imagen del proyecto ${project.title}`}
-      />
-      <p class="text-lg text-pretty mb-4">{project.description}</p>
+      <div class="flex flex-row">
+        <img
+          class="rounded shadow-2xl w-1/2"
+          src={project.image}
+          alt={`Imagen del proyecto ${project.title}`}
+        />
+        <p class="text-base font-normal text-gray-400 dark:text-gray-100 text-pretty ml-4">{project.description}</p>
+      </div>
       <ul>
         {project.tags.map((tag) => {
-          <li>{tag}</li>;
+          <li>{tag.name}</li>;
         })}
       </ul>
     </article>
