@@ -1,0 +1,84 @@
+---
+const tags = {
+  REACT: {
+    name: "React",
+    class: "bg-blue-400 text-white",
+    icon: "./assets/react.svg",
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-green-400 text-white",
+    icon: "./assets/nodedotjs.svg",
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-purple-500 text-white",
+    icon: "./assets/express.svg",
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-green-400 text-white",
+    icon: "./assets/mongodb.svg",
+  },
+  SASS: {
+    name: "Sass",
+    class: "bg-pink-400 text-white",
+    icon: "./assets/sass.svg",
+  },
+  CYPRESS: {
+    name: "Cypress",
+    class: "bg-orange-400 text-white",
+    icon: "./assets/cypress.svg",
+  },
+  MONGOOSE: {
+    name: "Mongoose",
+    class: "bg-blue-400 text-white",
+    icon: "./assets/mongoose.svg",
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-yellow-400 text-white",
+    icon: "./assets/vite.svg",
+  },
+};
+const projects = [
+  {
+    title: "Reallo - Planificador de proyectos y tareas",
+    description:
+      "Aplicación web fullstack para la gestión de proyectos y tareas, inspirada en Trello. Reallo ofrece una interfaz dinámica y amigable para la gestión de tareas y proyectos. Construida con React, Express, MongoDB y Node.js.",
+    link: "https://www.google.com",
+    github: "https://www.github.com",
+    image:
+      "https://github.com/TheBridge-DesafioTripulaciones-Grupo2/DesafioTripulaciones_Sept23_Grupo2_fullstack/raw/develop/assets/pantallazos.jpg",
+    tags: [tags.REACT, tags.NODEJS, tags.EXPRESS, tags.MONGODB, tags.SASS],
+  },
+  {
+    title: "Project 2",
+    description: "This is a project",
+    link: "https://www.google.com",
+    github: "https://www.github.com",
+    image:
+      "https://github.com/TheBridge-DesafioTripulaciones-Grupo2/DesafioTripulaciones_Sept23_Grupo2_fullstack/raw/develop/assets/pantallazos.jpg",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+];
+---
+
+{
+  projects.map((project) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-blue-400 mb-2">{project.title}</h3>
+      <img
+        class="rounded shadow-2xl shadow-cyan-500/40"
+        src={project.image}
+        alt={`Imagen del proyecto ${project.title}`}
+      />
+      <p class="text-lg text-pretty mb-4">{project.description}</p>
+      <ul>
+        {project.tags.map((tag) => {
+          <li>{tag}</li>;
+        })}
+      </ul>
+    </article>
+  ))
+}
